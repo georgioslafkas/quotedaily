@@ -1,0 +1,29 @@
+{
+  "name": "quotedaily",
+  "version": "1.0.0",
+  "description": "Quote of the day calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgioslafkas/quotedaily.git"
+  },
+  "keywords": [
+    "Calendar",
+    "quotes",
+    "quote",
+    "of",
+    "the",
+    "day",
+    "daily",
+    "quote"
+  ],
+  "author": "Georgios Lafkas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgioslafkas/quotedaily/issues"
+  },
+  "homepage": "https://github.com/georgioslafkas/quotedaily#readme"
+}
