@@ -6,8 +6,6 @@ type RandomQuoteParams = {
   authorId?: string;
 };
 
-type Params = RandomQuoteParams;
-
 const BASE_URL = "https://api.quotable.io";
 const ENDPOINTS = {
   RANDOM: "random",
