@@ -2,7 +2,7 @@
   "name": "quotedaily",
   "version": "1.0.0",
   "description": "Quote of the day calendar",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "test"
   },
@@ -13,17 +13,19 @@
   "keywords": [
     "Calendar",
     "quotes",
-    "quote",
-    "of",
-    "the",
-    "day",
-    "daily",
-    "quote"
+    "quote of the day",
+    "daily quote"
   ],
   "author": "Georgios Lafkas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/georgioslafkas/quotedaily/issues"
   },
-  "homepage": "https://github.com/georgioslafkas/quotedaily#readme"
+  "homepage": "https://github.com/georgioslafkas/quotedaily#readme",
+  "devDependencies": {
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.3",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  }
 }
