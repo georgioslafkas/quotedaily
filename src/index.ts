@@ -10,7 +10,6 @@ const getDateFormat = ({ locale, options }: GetDateProps) =>
 
 const quoteElement = document.getElementById("quote") as HTMLElement;
 const authorElement = document.getElementById("author") as HTMLElement;
-const dayElement = document.getElementById("day") as HTMLElement;
 const dateElement = document.getElementById("date") as HTMLElement;
 
 const getQuote = async () => {
@@ -29,7 +28,7 @@ const getQuote = async () => {
 const printQuote = async () => {
   try {
     const { author, content } = await getQuote();
-    quoteElement.innerText = content;
+    quoteElement.innerText = `"${content}"`;
     authorElement.innerText = `- ${author}`;
   } catch {
     quoteElement.innerText =
@@ -42,8 +41,7 @@ const printDate = () => {
   const today = new Date();
   const day = getDateFormat({ options: { weekday: "long" } }).format(today);
   const date = getDateFormat({}).format(today);
-  dayElement.innerText = day;
-  dateElement.innerText = date;
+  dateElement.innerText = `${day} ${date}`;
 };
 
 printQuote();

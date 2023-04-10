@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0;
+}
+
+.date {
+    font-size: 1.25rem;
+}
+
+.quote {
+    font-family: sans-serif;
+    font-style: oblique;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: .25rem;
+}
+
+.author {
+    align-self: start;
+}
