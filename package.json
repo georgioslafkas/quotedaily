@@ -2,7 +2,7 @@
   "name": "quotedaily",
   "version": "1.0.0",
   "description": "Quote of the day calendar",
-  "main": "dist/main.js",
+  "main": "public/dist/main.js",
   "scripts": {
     "test": "test"
   },
@@ -27,5 +27,8 @@
     "typescript": "^5.0.3",
     "webpack": "^5.78.0",
     "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "firebase": "^9.22.1"
   }
 }
