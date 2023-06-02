@@ -1,3 +1,14 @@
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    height: 100%;
+    background: #000;
+    color: linen;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -6,6 +17,7 @@
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 h1 {
@@ -28,3 +40,23 @@ h1 {
 .author {
     align-self: start;
 }
+
+.speech-bubble {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  .speech-bubble:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 4px;
+    border-bottom: 10px solid #f1f1f1;
+    border-right: 10px solid transparent;
+    transform: rotate(-45deg);
+  }
+  
