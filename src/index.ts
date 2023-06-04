@@ -1,4 +1,5 @@
-import { getRandomQuote } from "./quotedaily.resource";
+import { getQuoteById, getRandomQuote } from "./quotedaily.resource";
+import { getQuoteFromCookies, isToday, setQuoteInCookies } from "./util";
 
 type GetDateProps = {
   locale?: string;
@@ -14,9 +15,17 @@ const dateElement = document.getElementById("date") as HTMLElement;
 
 const getQuote = async () => {
   try {
-    const res = await getRandomQuote();
+    const existingQuoteId = getQuoteFromCookies().id;
+    const res = shouldGetNewQuote()
+      ? await getRandomQuote()
+      : await getQuoteById(existingQuoteId);
     if (res.ok) {
-      return await res.json();
+      const quote = await res.json();
+      setQuoteInCookies({
+        date: new Date().toLocaleDateString("sv"),
+        id: quote._id,
+      });
+      return quote;
     } else {
       throw Error(res.statusText);
     }
@@ -35,6 +44,15 @@ const printQuote = async () => {
       "Sometimes things break. This is not a daily quote, our service is just facing problems right now. Reload and if the problem persists, come back tomorrow.";
     quoteElement.innerText = "- Quotedaily";
   }
+};
+
+const shouldGetNewQuote = () => {
+  const quote = getQuoteFromCookies();
+  if (!quote?.id || !isToday(quote.date)) {
+    return true;
+  }
+
+  return false;
 };
 
 const printDate = () => {

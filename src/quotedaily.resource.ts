@@ -9,6 +9,7 @@ type RandomQuoteParams = {
 const BASE_URL = "https://api.quotable.io";
 const ENDPOINTS = {
   RANDOM: "random",
+  BY_ID: "quotes",
 };
 const OPTIONS = {
   method: "GET",
@@ -32,3 +33,6 @@ const buildRequest = (url: string, params?: RandomQuoteParams) =>
 
 export const getRandomQuote = (params?: RandomQuoteParams) =>
   fetch(buildRequest(`${BASE_URL}/${ENDPOINTS.RANDOM}`, params));
+
+export const getQuoteById = (id: string) =>
+  fetch(new Request(`${BASE_URL}/${ENDPOINTS.BY_ID}/${id}`), OPTIONS);
